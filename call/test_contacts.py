@@ -10,7 +10,7 @@ django.setup()
 
 from reminder.models import Reminder
 
-reminder_contacts = Reminder.objects.values_list('patient_id', 'patient_contact')
+reminder_contacts = Reminder.objects.values_list('patient_id', 'patient__patient_contact')
 
 for reminder in reminder_contacts:
-    print reminder
+    print '%s' % reminder
